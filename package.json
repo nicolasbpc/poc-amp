@@ -1,0 +1,14 @@
+{
+  "name": "poc-amp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -p 8080 ./public"
+  },
+  "author": "Nicolas <nicolas.santos@bompracredito.com.br>",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}
