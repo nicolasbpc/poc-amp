@@ -14,7 +14,8 @@
     <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
     <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
     <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
-    <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+    <script async custom-element="amp-install-serviceworker"
+        src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
 
     <link rel="manifest" href="/manifest.json">
     <link rel="canonical" href="https://amp.dev/documentation/guides-and-tutorials/start/create/basic_markup/" />
@@ -97,6 +98,9 @@
             font-size: 18px;
         }
 
+
+
+
         /* SET UP */
         * {
             padding: 0;
@@ -155,6 +159,16 @@
             width: 100%;
         }
 
+        .main-content_banner_image-mobile {
+            display: none;
+        }
+
+        @media screen and (max-width: 900px) {
+            .main-content_banner {
+                display: none;
+            }
+        }
+
         .main-content_banner:before {
             content: "";
             position: absolute;
@@ -186,9 +200,26 @@
             padding-top: 90px;
         }
 
+        @media screen and (max-width: 1200px) {
+            .main-content_container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+
+        @media screen and (max-width: 920px) {
+            .main-content_container {
+                padding: 0px;
+                /* background: #e9e7e7; */
+            }
+        }
+
         .main-content_container_left {
             width: 48%;
         }
+
+
+
 
         .main-content_container_right {
             width: 52%;
@@ -197,6 +228,17 @@
             position: sticky;
             top: 150px;
         }
+
+        @media screen and (max-width: 992px) {
+            .main-content_container_left {
+                width: 100%;
+            }
+
+            .main-content_container_right {
+                display: none;
+            }
+        }
+
 
         .main-content_container_featured-text {
             position: relative;
@@ -218,6 +260,10 @@
             margin-bottom: 30px;
         }
 
+
+
+
+
         .main-content_container_featured-text_calltoaction {
             text-decoration: none;
             color: #FFF;
@@ -230,6 +276,25 @@
             max-width: 300px;
         }
 
+        @media screen and (max-width: 992px) {
+
+            .main-content_container_featured-text_title {
+                font-size: 1.4em;
+                margin-bottom: 15px;
+            }
+
+            .main-content_container_featured-text_subtitle {
+                color: #a0a0a0;
+                font-size: .8em;
+                line-height: 1.4em;
+                margin-bottom: 5px;
+            }
+
+            .main-content_container_featured-text_calltoaction {
+                display: none;
+            }
+        }
+
         /* BENEFICIOS */
         .main-content_container_benefits {
             padding: 70px 0 0 0;
@@ -237,6 +302,7 @@
 
         .main-content_container_benefits_carroucel {
             margin-bottom: 50px;
+            margin-top: 40px;
         }
 
         .main-content_container_benefits_carroucel_item {
@@ -244,6 +310,16 @@
             background: #fff;
             border-radius: 3px;
             border: 1px solid #f1efee;
+        }
+
+        @media screen and (max-width: 992px) {
+            .main-content_container_benefits_carroucel_item {
+                width: 100%;
+                background: #fff;
+                border-radius: 3px;
+                border: 1px solid #f1efee;
+            }
+
         }
 
         .bullet_carousel-preview {
@@ -316,6 +392,68 @@
             margin-top: 40px;
         }
 
+        /* ACCORDION */
+        .services_descriptions_accordion-wrapper h2 {
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 16px;
+            color: inherit;
+            text-align: left;
+            padding: 10px 15px;
+            margin-top: 10px;
+
+            color: #478699;
+            font-weight: 700;
+            border-color: #edf4f4;
+            padding: 15px;
+
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+        }
+
+        .services_descriptions_accordion-wrapper>div {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 0px 0px 4px 4px;
+            margin-bottom: 15px;
+            border-top: none;
+        }
+
+        .services_description_doubts {
+            text-align: center;
+        }
+
+        .services_description_doubts_title {
+            font-size: 1.7em;
+            text-align: center;
+        }
+
+        .services_description_doubts_text {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .services_description_doubts_target {
+            background: inherit;
+            border: 1px solid #009180;
+            color: #009180;
+            padding: 10px 22px;
+            font-weight: bold;
+            font-size: 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.5s ease-in-out;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .services_description_doubts_target:hover {
+            background: #009180;
+            color: #FFF;
+        }
+
 
         /* TITLE COMPONENT */
         .title-component {
@@ -337,6 +475,10 @@
         }
 
         /* HOW MUTCH COST*/
+        .how-mutch-cost {
+            margin-bottom: 40px;
+        }
+
         .how-mutch-cost_list {
             list-style: none;
             display: flex;
@@ -359,6 +501,21 @@
         }
 
         /* FORMULÁRIO*/
+        #ampForm.mobile {
+            display: none;
+        }
+
+        @media screen and (max-width: 920px) {
+            #ampForm.mobile {
+                display: block;
+                width: 100%;
+                margin: 20px 0;
+            }
+            .main-content_container_featured-text {
+                height: auto;
+            }
+        }
+
         form {
             padding: 1.5em;
             background: #EEF4F4;
@@ -526,6 +683,30 @@
         input[type=radio].loan-term-radio+label.hide {
             display: none;
         }
+
+
+        @media screen and (max-width: 920px) {
+            .main-content_container_featured-text {
+                padding: 20px;
+                background: #e9e7e7;
+            }
+
+            .main-content_container_benefits {
+                padding: 20px;
+            }
+
+            .main-content_container_institutions {
+                padding: 20px;
+            }
+
+            .how-mutch-cost {
+                padding: 20px;
+            }
+
+            .doubt {
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 
@@ -553,6 +734,8 @@
         <section class="container main-content_container">
             <div class="main-content_container_left">
                 <section class="main-content_container_featured-text">
+                    <amp-img class="main-content_banner_image-mobile" src="./assets/images/background-home.jpg"
+                        alt="banner" height="763" width="1357" layout="responsive"></amp-img>
                     <h1 class="main-content_container_featured-text_title">
                         Empréstimo para o seu negócio? A gente te ajuda.
                     </h1>
@@ -561,6 +744,112 @@
                         Crédito. Aqui
                         você encontra diversas opções de crédito de acordo o com seu perfil em um único lugar.</h2>
                     <a class="main-content_container_featured-text_calltoaction" href="#">Conheça o Bom Pra Crédito</a>
+                    <form id="ampForm" name="ampForm" class="loan-form mobile"
+                        action-xhr="https://qa.bompracredito.com.br/app/api/AmpApi/GeneratePreProposal" method="post"
+                        on="submit:ampForm.clear,AMP.setState({btnContinue:true})" target="_top">
+                        <div class="form-loan-amount">
+                            <label>
+                                <span class="form-label-span">De quanto você precisa?<br /></span>
+                                <input type="number" [value]="amountValue" id="loan-amount"
+                                    [class]="otherAmountValue ? 'form-control relative loan-amount loan-amount-input-big show' : 'hide'"
+                                    class="hide" name="amount" min="100" max="99999" required>
+                                <input id="amount2000" name="amountRadio" on="change:AMP.setState({amountValue:2000})"
+                                    value="2000" type="radio" [hidden]="otherAmountValue"
+                                    class="loan-amount loan-amount-radio" required>
+                                <label class="loan-amount-radio-mini" [hidden]="otherAmountValue"
+                                    for="amount2000">2.000</label>
+                                <input id="amount5000" name="amountRadio" on="change:AMP.setState({amountValue:5000})"
+                                    value="5000" type="radio" [hidden]="otherAmountValue"
+                                    class="loan-amount loan-amount-radio">
+                                <label class="loan-amount-radio-mini" [hidden]="otherAmountValue"
+                                    for="amount5000">5.000</label>
+                                <input id="amount10000" name="amountRadio" on="change:AMP.setState({amountValue:10000})"
+                                    value="10000" type="radio" [hidden]="otherAmountValue"
+                                    class="loan-amount loan-amount-radio">
+                                <label class="loan-amount-radio-mini" [hidden]="otherAmountValue"
+                                    for="amount10000">10.000</label>
+                                <input id="amountOther1" name="amountRadio" value="0" type="radio"
+                                    on="change:AMP.setState({otherAmountValue:true})" [hidden]="otherAmountValue"
+                                    class="loan-amount loan-amount-radio amountOther1">
+                                <label class="loan-amount-radio-big" [hidden]="otherAmountValue"
+                                    for="amountOther1">Outro
+                                    Valor</label>
+                                <input id="amountOther2" name="amountRadio" value="0" type="radio"
+                                    on="change:AMP.setState({otherAmountValue:false})"
+                                    [class]="otherAmountValue ? 'loan-amount loan-amount-radio show' : 'hide'"
+                                    class="hide">
+                                <label id="amountOtherLabel" class="hide"
+                                    [class]="otherAmountValue ? 'loan-amount-radio-big show' : 'hide'"
+                                    for="amountOther2">Outro
+                                    Valor</label>
+                            </label>
+                        </div>
+                        <div class="form-loan-term">
+                            <label>
+                                <span class="form-label-span">Em quantas vezes?<br /></span>
+                                <select id="loan-term"
+                                    [class]="otherTermValue ? 'form-control relative loan-term-input-big show' : 'hide'"
+                                    class="hide" name="term" required>
+                                    <option value="6">6</option>
+                                    <option value="9">9</option>
+                                    <option value="12" [selected]="termValue == 12">12</option>
+                                    <option value="15">15</option>
+                                    <option value="18" [selected]="termValue == 18">18</option>
+                                    <option value="24" [selected]="termValue == 24">24</option>
+                                    <option value="36">36</option>
+                                    <option value="48">48</option>
+                                    <option value="60">60</option>
+                                    <option value="96">96</option>
+                                    <option value="120">120</option>
+                                </select>
+                                <input id="term12" name="termRadio" on="change:AMP.setState({termValue:12})" value="12"
+                                    type="radio" [hidden]="otherTermValue" class="loan-term loan-term-radio" required>
+                                <label class="loan-term-radio-mini" [hidden]="otherTermValue" for="term12">12</label>
+                                <input id="term18" name="termRadio" on="change:AMP.setState({termValue:18})" value="18"
+                                    type="radio" [hidden]="otherTermValue" class="loan-term loan-term-radio">
+                                <label class="loan-term-radio-mini" [hidden]="otherTermValue" for="term18">18</label>
+                                <input id="term24" name="termRadio" on="change:AMP.setState({termValue:24})" value="24"
+                                    type="radio" [hidden]="otherTermValue" class="loan-term loan-term-radio">
+                                <label class="loan-term-radio-mini" [hidden]="otherTermValue" for="term24">24</label>
+                                <input id="termOther1" name="termRadio" value="0" type="radio"
+                                    on="change:AMP.setState({otherTermValue:true})" [hidden]="otherTermValue"
+                                    class="loan-term loan-term-radio termOther1">
+                                <label class="loan-term-radio-big" [hidden]="otherTermValue" for="termOther1">Outro
+                                    Prazo</label>
+                                <input id="termOther2" name="termRadio" value="0" type="radio"
+                                    on="change:AMP.setState({otherTermValue:false})"
+                                    [class]="otherTermValue ? 'loan-term loan-term-radio show' : 'hide'"
+                                    class="loan-term loan-term-radio hide">
+                                <label id="termOtherLabel" class="hide"
+                                    [class]="otherTermValue ? 'loan-term-radio-big show' : 'hide'"
+                                    for="termOther2">Outro
+                                    Prazo</label>
+                            </label>
+                        </div>
+                        <label class="label-full-name">
+                            <span class="form-label-span">Seu nome completo</span>
+                            <input type="text" id="loan-name" class="form-control relative" name="name" required
+                                pattern=".+\s.+" title="O nome informado deve conter ao menos nome e sobrenome.">
+                        </label>
+                        <label class="label-email">
+                            <span class="form-label-span">Seu e-mail</span>
+                            <input type="email" id="loan-email" class="form-control relative" name="email" required>
+                        </label>
+                        <button class="loan-form-submit" type="submit" [hidden]="btnContinue">Continuar</button>
+                        <button class="hide" [class]="btnContinue ? 'loan-form-submit-after' : 'hide'" type="button"
+                            [disabled]="btnContinue">Aguarde</button>
+                        <div submit-success>
+                            <template class="loan-form-submit-success" type="amp-mustache">Continue o seu cadastro e
+                                compare
+                                suas
+                                opções de empréstimo.</template>
+                        </div>
+                        <div submit-error>
+                            <template class="loan-form-submit-error" type="amp-mustache">Oops! Erro ao enviar
+                                formulário.
+                                {{message}}</template>
+                        </div>
+                    </form>
                 </section>
                 <section class="main-content_container_benefits">
                     <div class="title-component">
@@ -648,10 +937,45 @@
                         </li>
                     </ul>
                 </section>
+                <section class="doubt">
+                    <div class="title-component">
+                        <h2 class="title-component_text">Duvidas?</h2>
+                    </div>
+                    <amp-accordion animate disable-session-states>
+                        <section class="services_descriptions_accordion-wrapper">
+                            <h2>It has roots is that it has a more-or-less?</h2>
+                            <div>
+                                <p>It is a long established fact that a reader will be distracted by the readable
+                                    content of a
+                                    page when
+                                    looking at its layout.
+                                    The point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>
+                                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
+                                    piece of
+                                    classical
+                                    Latin literature from 45 BC, making it over 2000 years old</p>
+                            </div>
+                        </section>
+                        <section class="services_descriptions_accordion-wrapper">
+                            <h2>It has roots is that it has a more-or-less?</h2>
+                            <div>
+                                <p>It is a long established fact that a reader will be distracted by the readable
+                                    content of a
+                                    page when
+                                    looking at its layout.
+                                    The point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>
+                                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
+                                    piece of
+                                    classical
+                                    Latin literature from 45 BC, making it over 2000 years old</p>
+                            </div>
+                        </section>
+                    </amp-accordion>
+                </section>
             </div>
             <div class="main-content_container_right">
-                <form id="ampForm" name="ampForm" class="loan-form" method="post"
-                    
+                <form id="ampForm" name="ampForm" class="loan-form"
+                    action-xhr="https://qa.bompracredito.com.br/app/api/AmpApi/GeneratePreProposal" method="post"
                     on="submit:ampForm.clear,AMP.setState({btnContinue:true})" target="_top">
                     <div class="form-loan-amount">
                         <label>
