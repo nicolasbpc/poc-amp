@@ -135,6 +135,7 @@
             position: relative;
             display: flex;
             justify-content: center;
+            align-items: flex-start;
         }
 
         .main-content_banner {
@@ -176,27 +177,28 @@
         .main-content_container {
             display: flex;
             flex-wrap: wrap;
-            padding-top: 70px;
             position: relative;
             z-index: 1;
-            height: calc(100vh - 66px);
+            align-items: flex-start;
+            padding-top: 90px;
         }
 
         .main-content_container_left {
             width: 48%;
-            height: 100%;
         }
 
         .main-content_container_right {
             width: 52%;
             display: flex;
             justify-content: center;
+            position: sticky;
+            top: 150px;
         }
 
         .main-content_container_featured-text {
             position: relative;
             z-index: 2;
-            height: 100%;
+            height: calc(100vh - 136px);
         }
 
         .main-content_container_featured-text_title {
@@ -225,13 +227,123 @@
             max-width: 300px;
         }
 
+        /* BENEFICIOS */
+        .main-content_container_benefits {
+            padding: 70px 0 0 0;
+        }
+
+        .main-content_container_benefits_carroucel {
+            margin-bottom: 50px;
+        }
+
+        .main-content_container_benefits_carroucel_item {
+            width: calc(50% - 8px);
+            background: #fff;
+            border-radius: 3px;
+            border: 1px solid #f1efee;
+        }
+
+        .bullet_carousel-preview {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .bullet_carousel-preview button {
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+            margin-right: 10px;
+            background: #D7E2E2;
+            outline: none;
+            border: none;
+        }
+
+        #carouselWithPreviewSelector.bullet_carousel-preview button[option][selected] {
+            border: none;
+            background: #C9D300;
+            outline: none;
+            width: 12px;
+            height: 12px;
+        }
+
+        #carouselWithPreview>div::-webkit-scrollbar,
+        #carouselWithPreview>div::-webkit-scrollbar-thumb {
+            opacity: 0;
+        }
+
+        .main-content_container_benefits_carroucel_item:last-child {
+            margin-right: 2px;
+        }
+
+        .main-content_container_benefits_carroucel_item .content {
+            padding: 25px;
+        }
+
+        .main-content_container_benefits_carroucel_item_title {
+            padding-top: 0;
+            margin-top: 0;
+            color: #C9D300;
+            font-size: 1em;
+        }
+
+        .main-content_container_benefits_carroucel_item_review {
+            font-size: .75em;
+            color: #969290;
+            white-space: normal;
+        }
+
+
+        #carouselWithPreview .amp-carousel-button-prev {
+            display: none;
+        }
+
+        #carouselWithPreview .amp-carousel-button-next {
+            display: none;
+        }
+
+        /* CHART */
+        .main-content_container_institutions {
+            margin-bottom: 50px;
+        }
+
+        .main-content_container_institutions_chart {
+            margin-top: 40px;
+        }
+
+
         /* TITLE COMPONENT */
+        .title-component {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
         .title-component_text {
             color: #009180;
             font-size: 1.5em;
             font-weight: 700;
         }
 
+        .title-component_subtext {
+            color: #478699;
+            font-weight: 700;
+            font-size: 1em;
+            margin-top: 10px;
+        }
+
+        /* HOW MUTCH COST*/
+        .how-mutch-cost_list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .how-mutch-cost_list_item {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+        }
         /* FORMULÁRIO*/
         form {
             padding: 1.5em;
@@ -438,6 +550,84 @@
                     <div class="title-component">
                         <h2 class="title-component_text">Benefícios do Bom Pra Crédito</h2>
                     </div>
+                    <div class="main-content_container_benefits_carroucel">
+                        <amp-carousel id="carouselWithPreview" height="180" layout="fixed-height" type="carousel"
+                            autoplay delay="4000"
+                            on="slideChange:carouselWithPreviewSelector.toggle(index=event.index, value=true)">
+                            <div class="main-content_container_benefits_carroucel_item square-medium">
+                                <amp-fit-text width="260" height="167" layout="responsive" max-font-size="18">
+                                    <div class="content">
+                                        <h3 class="main-content_container_benefits_carroucel_item_title">Parceiros</h3>
+                                        <p class="main-content_container_benefits_carroucel_item_review"> Melhores taxas
+                                            de
+                                            juros e parcelas que cabem no bolso</p>
+                                    </div>
+                                </amp-fit-text>
+                            </div>
+                            <div class="main-content_container_benefits_carroucel_item square-medium">
+                                <amp-fit-text width="260" height="167" layout="responsive" max-font-size="18">
+                                    <div class="content">
+                                        <h3 class="main-content_container_benefits_carroucel_item_title">Parceiros</h3>
+                                        <p class="main-content_container_benefits_carroucel_item_review"> Melhores taxas
+                                            de
+                                            juros e parcelas que cabem no bolso</p>
+                                    </div>
+                                </amp-fit-text>
+
+                            </div>
+                            <div class="main-content_container_benefits_carroucel_item square-medium">
+                                <amp-fit-text width="260" height="167" layout="responsive" max-font-size="18">
+                                    <div class="content">
+                                        <h3 class="main-content_container_benefits_carroucel_item_title">Parceiros</h3>
+                                        <p class="main-content_container_benefits_carroucel_item_review"> Melhores taxas
+                                            de
+                                            juros e parcelas que cabem no bolso</p>
+                                    </div>
+                                </amp-fit-text>
+                            </div>
+                        </amp-carousel>
+                        <amp-selector id="carouselWithPreviewSelector" class="bullet_carousel-preview"
+                            on="select:carouselWithPreview.goToSlide(index=event.targetOption)" layout="container">
+                            <button option="0" selected></button>
+                            <button option="1"></button>
+                            <button option="2"></button>
+                        </amp-selector>
+                    </div>
+                </section>
+                <section class="main-content_container_institutions">
+                    <div class="title-component">
+                        <h2 class="title-component_text">Mais de 25 Instituições Financeiras?</h2>
+                    </div>
+                    <amp-img class="main-content_container_institutions_chart" src="./assets/images/Grafico.png"
+                        alt="banner" height="343" width="532.8" layout="responsive"></amp-img>
+                </section>
+                <section class="how-mutch-cost">
+                    <div class="title-component">
+                        <h2 class="title-component_text">Por que o Bom Pra Crédito?</h2>
+                        <h3 class="title-component_subtext">Porque a gente sabe o quanto o seu tempo vale.</h3>
+                    </div>
+                    <ul class="how-mutch-cost_list">
+                        <li class="how-mutch-cost_list_item">
+                            <amp-img class="main-content_container_institutions_chart" src="./assets/images/bullet-1.png"
+                                alt="banner" height="88" width="87" ></amp-img>
+                                <label for="" class="how-mutch-cost_list_item_label">Você preenche um só cadastro.</label>
+                        </li>
+                        <li class="how-mutch-cost_list_item">
+                            <amp-img class="main-content_container_institutions_chart" src="./assets/images/bullet-2.png"
+                                alt="banner" height="88" width="87" ></amp-img>
+                                <label for="" class="how-mutch-cost_list_item_label">Nós buscamos seu empréstimo em mais de 30 financeiras.</label>
+                        </li>
+                        <li class="how-mutch-cost_list_item">
+                            <amp-img class="main-content_container_institutions_chart" src="./assets/images/bullet-3.png"
+                                alt="banner" height="88" width="87" ></amp-img>
+                                <label for="" class="how-mutch-cost_list_item_label">Você compara as propostas de acordo com o seu perfil.</label>
+                        </li>
+                        <li class="how-mutch-cost_list_item">
+                            <amp-img class="main-content_container_institutions_chart" src="./assets/images/bullet-4.png"
+                                alt="banner" height="88" width="87" ></amp-img>
+                                <label for="" class="how-mutch-cost_list_item_label">E finaliza tudo online ou na loja de nossos parceiros.</label>
+                        </li>
+                    </ul>
                 </section>
             </div>
             <div class="main-content_container_right">
