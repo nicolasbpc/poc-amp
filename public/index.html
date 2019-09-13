@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    <title>Teste Landing Page</title>
+    <title>Emprestimo Pessoal AMP</title>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
     <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
@@ -89,6 +89,10 @@
     </noscript>
     <style amp-custom>
         /* any custom style goes here */
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 18px;
+        }
 
         /* SET UP */
         * {
@@ -101,96 +105,134 @@
             text-transform: uppercase;
         }
 
-        .hide,
-        input[type=radio].loan-amount-radio+label.hide,
-        input[type=radio].loan-term-radio+label.hide {
-            display: none;
+        .bar-warning-top {
+            width: 100%;
+            padding: 5px;
+            background-color: #E6B512;
+            text-align: center;
         }
 
+        .bar-warning-top_text {
+            font-size: .7em;
+            text-align: center;
+            font-weight: 700;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        /*header*/
+        .header_navigation_container_logo {
+            padding: 10px;
+        }
+
+        /*banner principal*/
         .container {
-            padding-right: 15px;
-            padding-left: 15px;
-            margin-right: auto;
-            margin-left: auto;
             max-width: 1170px;
             width: 100%;
         }
 
-        body {
-            font-family: 'Ubuntu', sans-serif;
-            font-size: 14px;
-            line-height: 1.42857143;
-        }
-
-        .featured {
-            font-weight: bold;
-        }
-
-        .featured-color {
-            color: #c9d300;
-        }
-
-        /* BAR WARNING COMPONENT */
-        .bar-warning-top {
-            background: #009180;
-        }
-
-        .bar-warning-top_text-top {
-            color: #FFF;
-            text-align: center;
-            padding: 10px 15px;
-            font-size: smaller;
-        }
-
-        /*header*/
-        .header {
-            display: flex;
-            background-image: -webkit-linear-gradient(left, #1A4C5C, #008F9C);
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-
-        .header_navigation_container_logo {
-            width: 210px;
-            height: 30px;
-        }
-
-        .header_container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .header_container_navigation_list {
-            display: flex;
-            list-style: none;
-        }
-
-        .header_container_navigation_list_item {
-            margin-right: 10px;
-            font-weight: bold;
-            color: #FFF;
-
-        }
-
-        .header_container_navigation_list_item:last-child {
-            margin: 0;
-        }
-
-        /*FORMULÁRIO*/
-        .description--form {
-            background-image: -webkit-linear-gradient(left, #1A4C5C, #008F9C);
+        .main-content {
+            position: relative;
             display: flex;
             justify-content: center;
-            padding: 15px 0 80px 0;
         }
 
-        .description--form_container {
+        .main-content_banner {
+            height: calc(100vh - 66px);
+            overflow: hidden;
             display: flex;
-            justify-content: space-between;
+            z-index: 1;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
         }
 
+        .main-content_banner:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, .7);
+            display: block;
+            z-index: 1;
+        }
+
+        .main-content_banner_image {
+            position: absolute;
+            z-index: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .main-content_container {
+            display: flex;
+            flex-wrap: wrap;
+            padding-top: 70px;
+            position: relative;
+            z-index: 1;
+            height: calc(100vh - 66px);
+        }
+
+        .main-content_container_left {
+            width: 48%;
+            height: 100%;
+        }
+
+        .main-content_container_right {
+            width: 52%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .main-content_container_featured-text {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+        }
+
+        .main-content_container_featured-text_title {
+            color: #00B8C1;
+            font-weight: 700;
+            font-size: 2.5em;
+            margin-bottom: .8em;
+        }
+
+        .main-content_container_featured-text_subtitle {
+            color: #fff;
+            font-weight: 400;
+            font-size: 1em;
+            margin-bottom: 30px;
+        }
+
+        .main-content_container_featured-text_calltoaction {
+            text-decoration: none;
+            color: #FFF;
+            padding: 15px;
+            border: 1px solid #fff;
+            font-size: 1em;
+            display: block;
+            border-radius: 4px;
+            text-transform: uppercase;
+            max-width: 300px;
+        }
+
+        /* TITLE COMPONENT */
+        .title-component_text {
+            color: #009180;
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+
+        /* FORMULÁRIO*/
         form {
             padding: 1.5em;
             background: #EEF4F4;
@@ -351,473 +393,12 @@
         .loan-form-submit-after {
             background: rgba(192, 192, 192, 1);
             background: linear-gradient(to bottom, rgba(192, 192, 192, 1) 0, rgba(169, 169, 169, 1) 100%);
-
         }
 
-        /*BANNER TEXT*/
-        .description--form_container_box {
-            padding-right: 7%;
-        }
-
-        .description--form_container_box_title {
-            font-size: 2.5em;
-            color: #FFF;
-            font-weight: lighter;
-            line-height: 1.1;
-            padding-right: 5%;
-        }
-
-        .description--form_container_box_title small {
-            display: block;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        .description--form_container_box_subtitle {
-            margin-top: 1.2em;
-            font-size: 1.2em;
-            color: #FFF;
-            font-weight: lighter;
-        }
-
-        .description--form_container_listSteps {
-            margin: 3em 4em 1em 4em;
-            list-style: none;
-        }
-
-        .description--form_container_listSteps_item {
-            padding-left: 5.5em;
-            list-style: none;
-            font-weight: lighter;
-            color: #FFF;
-            font-size: 1.1em;
-            padding-bottom: 2em;
-            display: flex;
-            align-items: center;
-            line-height: 25px;
-            position: relative;
-        }
-
-        .description--form_container_listSteps_item_svgBox {
-            margin-right: 10px;
-            position: absolute;
-            left: 0;
-        }
-
-        .description--form_container_listSteps_item_svgBox.svg1 {
-            width: 60px;
-            height: 60px;
-        }
-
-        .description--form_container_listSteps_item_svgBox.svg2 {
-            width: 46px;
-            height: 46px;
-        }
-
-        .description--form_container_listSteps_item_svgBox.svg3 {
-            width: 46px;
-            height: 46px;
-        }
-
-        .description--form_container_supportText {
-            font-weight: normal;
-            text-align: center;
-            font-size: 1.2em;
-        }
-
-        @media screen and (max-width: 991px) {
-            .header_container_navigation {
-                display: none;
-            }
-
-            .header_navigation_container_logo {
-                display: block;
-                margin: 0 auto;
-            }
-
-            .description--form_container_box {
-                display: none;
-            }
-
-            form,
-            .description--form_container_boxForm {
-                width: 100%;
-                box-sizing: border-box;
-            }
-        }
-
-
-        /* JOB DESCRIPTION */
-        .job-description {
-            display: flex;
-            align-items: center;
-            padding: 20px 0;
-        }
-
-
-        .job-description_text_title {
-            text-align: center;
-            font-size: 1.6em;
-            color: #333;
-            line-height: 25px;
-            margin: 0 10%;
-            margin-bottom: 1em;
-        }
-
-        .job-description_image {
-            width: 47%;
-            margin-right: 5%;
-            position: relative;
-        }
-
-        .poupover-descritopn {
-            position: absolute;
-            box-sizing: border-box;
-            border-radius: 15px;
-            background: #fff;
-            width: 250px;
-            box-shadow: -6px 4px 46px -16px rgba(0, 0, 0, .75);
-            position: relative;
-            top: -40px;
-            margin-left: 50%;
-            color: #90A5A5;
-            text-align: center;
-            padding: 18px;
-        }
-
-        .job-description_text {
-            width: 48%;
-            padding-right: 10%;
-        }
-
-        .job-description_text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .job-description_box {
-            display: flex;
-        }
-
-        .job-description_box p {
-            width: 50%;
-            color: #333;
-            margin-bottom: 10px;
-            padding: 0 15px;
-        }
-
-        @media screen and (max-width: 991px) {
-            .job-description {
-                flex-direction: column;
-            }
-
-            .job-description_image {
-                width: 100%;
-            }
-
-            .job-description_text {
-                width: 100%;
-                order: -1;
-                margin-bottom: 20px;
-                flex-direction: column;
-            }
-
-            .job-description_box {
-                flex-direction: column;
-            }
-
-            .job-description_box p {
-                width: 100%;
-            }
-
-            .poupover-descritopn {
-                left: 0;
-                right: 0;
-                margin: auto;
-            }
-        }
-
-        /* USE EXPERIENCE*/
-        .user-experience {
-            background: #EDF4F4;
-            padding: 40px 0px;
-        }
-
-        .user-experience_title {
-            color: #009180;
-            font-size: 1.6em;
-            text-align: center;
-            padding: 0 10%;
-            margin-bottom: 30px;
-        }
-
-        .user-experience_carroucel_item_testimony {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
-            padding: 0 15%;
-        }
-
-        .user-experience_carroucel_item_testimony_icon {
-            width: 100%;
-            padding-left: 20%;
-        }
-
-        .user-experience_carroucel_item_testimony-title {
-            font-size: 15px;
-            color: #333;
-            width: 58%;
-            padding: 0 15px;
-            text-align: center;
-        }
-
-        .user-experience_carroucel_item_testimony-text {
-            font-size: 22px;
-            text-align: center;
-            color: #333;
-            margin-bottom: 15px;
-        }
-
-        .user-experience_carroucel_item_testimony-person {
-            text-align: center;
-        }
-
-        .user-experience_carroucel_item_testimony-person .name {
-            color: #23C1C8;
-            font-size: 14px;
-            margin: 0 0 5px;
-            font-weight: bold;
-        }
-
-        .user-experience_carousel-preview {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 30px;
-        }
-
-        .user-experience_carousel-preview button {
-            width: 10px;
-            height: 10px;
-            border-radius: 100%;
-            margin-right: 10px;
-            background: #D7E2E2;
-            outline: none;
-            border: none;
-        }
-
-        #carouselWithPreviewSelector.user-experience_carousel-preview button[option][selected] {
-            border: none;
-            background: #00B8C1;
-            outline: none;
-            width: 12px;
-            height: 12px;
-        }
-
-        .user-experience_carousel-preview button:last-child {
-            margin-right: 0;
-        }
-
-        @media screen and (max-width: 991px) {
-            .user-experience_title {
-                width: 100%;
-                font-size: 20px;
-            }
-
-            .user-experience_carroucel_item_testimony-title {
-                width: 100%;
-                font-size: 16px;
-            }
-
-            .user-experience_carrousel #carouselWithPreview:after {
-                content: "";
-                padding-top: 12%;
-                display: block;
-                width: 0;
-            }
-
-            .user-experience_carroucel_item_testimony-text {
-                font-size: 18px;
-            }
-
-            .user-experience_carroucel_item_testimony {
-                padding: 0;
-            }
-
-            .user-experience_carroucel_item_testimony_icon {
-                margin: 20px 0;
-            }
-        }
-
-        @media screen and (max-width: 690px) {
-            .user-experience_carrousel #carouselWithPreview:after {
-                padding-top: 33%;
-            }
-        }
-
-        @media screen and (max-width: 500px) {
-            .user-experience_carrousel #carouselWithPreview:after {
-                padding-top: 60%;
-            }
-        }
-
-        @media screen and (max-width: 450px) {
-            .user-experience_carrousel #carouselWithPreview:after {
-                padding-top: 111%;
-            }
-        }
-
-        @media screen and (max-width: 400px) {
-            .user-experience_carrousel #carouselWithPreview:after {
-                padding-top: 118%;
-            }
-        }
-
-        /* COMUNNICATION*/
-        .communication {
-            padding: 50px 0;
-        }
-
-        .communication_carrousel_item {
-            padding-right: 20px;
-            vertical-align: middle;
-            margin-left: 26px;
-        }
-
-        .communication_carrousel_item:first-child {
-            margin-left: 0;
-        }
-
-        .communication_carrousel>div {
-            text-align: center;
-        }
-
-        /* width */
-        .communication_carrousel>div::-webkit-scrollbar {
-            opacity: 0;
-        }
-
-        /* Track */
-        .communication_carrousel>div::-webkit-scrollbar-track {
-            opacity: 0;
-        }
-
-        /* Handle */
-        .communication_carrousel>div::-webkit-scrollbar-thumb {
-            opacity: 0;
-        }
-
-        /* Handle on hover */
-        .communication_carrousel>div::-webkit-scrollbar-thumb:hover {
-            opacity: 0;
-        }
-
-        .communication_title {
-            color: #009180;
-            font-size: medium;
-            text-align: center;
-            font-weight: normal;
-            margin: 0 0 10px 0;
-        }
-
-        /* SERVICES */
-        .services {
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            padding-bottom: 50px;
-        }
-
-        .services_image {
-            width: 40%;
-            margin-right: 5%;
-        }
-
-        .services_description {
-            width: 55%;
-            padding-right: 15%;
-        }
-
-        .services_description p {
-            color: #333;
-            font-size: 14px;
-            margin-bottom: 10px;
-        }
-
-        .services_description h2 {
-            margin-bottom: .8em;
-            margin-top: 1.2em;
-            font-size: 1.7em;
-            text-align: center;
-        }
-
-        @media screen and (max-width: 991px) {
-            .services_image {
-                display: none;
-            }
-
-            .services_description {
-                width: 100%;
-                padding: 0 15px;
-            }
-        }
-
-        /* ACCORDION */
-        .services_descriptions_accordion-wrapper h2 {
-            color: #333;
-            background-color: #f5f5f5;
-            margin-top: 0;
-            margin-bottom: 0;
-            font-size: 16px;
-            color: inherit;
-            text-align: left;
-            padding: 10px 15px;
-            margin-top: 10px;
-        }
-
-        .services_descriptions_accordion-wrapper>div {
-            padding: 10px 15px;
-            border: 1px solid #ddd;
-            border-radius: 0px 0px 4px 4px;
-            margin-bottom: 15px;
-            border-top: none;
-        }
-
-        .services_description_doubts {
-            text-align: center;
-        }
-
-        .services_description_doubts_title {
-            font-size: 1.7em;
-            text-align: center;
-        }
-
-        .services_description_doubts_text {
-            text-align: center;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        .services_description_doubts_target {
-            background: inherit;
-            border: 1px solid #009180;
-            color: #009180;
-            padding: 10px 22px;
-            font-weight: bold;
-            font-size: 12px;
-            border-radius: 20px;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: all 0.5s ease-in-out;
-            display: inline-block;
-            margin-top: 20px;
-        }
-
-        .services_description_doubts_target:hover {
-            background: #009180;
-            color: #FFF;
+        .hide,
+        input[type=radio].loan-amount-radio+label.hide,
+        input[type=radio].loan-term-radio+label.hide {
+            display: none;
         }
     </style>
 </head>
@@ -827,57 +408,39 @@
     <amp-analytics config="https://www.googletagmanager.com/amp.json?id=GTM-MKRLNTL&gtm.url=SOURCE_URL"
         data-credentials="include"></amp-analytics>
     <section class="bar-warning-top">
-        <p class="bar-warning-top_text-top"><span class="featured">IMPORTANTE:</span> It has roots <span
-                class="featured">GRATUITO. NUNCA</span> It has roots in a piece of classical. Dúvida? Acesse
-            nossa <span class="featured-color">Central de Ajuda</span>.</p>
+        <p class="bar-warning-top_text">Cuidado com as fraudes. Veja como se proteger</p>
     </section>
     <header class="header">
         <div class="container header_container">
             <div class="header_navigation_container_logo">
-                <amp-img src="./assets/images/bom-pra-credito-logo.png" alt="Welcome" height="30" width="210"
-                    layout="responsive"></amp-img>
-            </div>
-            <div class="header_container_navigation">
+                <amp-img src="./assets/images/Logo_horizontal.png" alt="logo bpc" height="18.58" width="130"></amp-img>
             </div>
         </div>
     </header>
-    <section class="description--form">
-        <div class="container description--form_container">
-            <div class="description--form_container_box">
-                <h1 class="description--form_container_box_title">
-                    <small class="featured-color uppercase">dummy text of the printing and</small>
-                    <strong>Simply</strong> dummy text of the printing and <strong>typesetting industry.</strong>
-                </h1>
-                <h2 class="description--form_container_box_subtitle">Industry's standard dummy text ever
-                    <span class="featured">since the 1500s, when an unknown</span> printer took a galley.</h2>
-                <ul class="description--form_container_listSteps">
-                    <li class="description--form_container_listSteps_item">
-                        <div class="description--form_container_listSteps_item_svgBox svg1">
-                            <amp-img width="66" height="66" layout="responsive"
-                                src="./assets/icons/consulte-emprestimo-em-todo-mercado.svg"></amp-img>
-                        </div>
-                        When an unknown printer took a galley of type.
-                    </li>
-                    <li class="description--form_container_listSteps_item">
-                        <div class="description--form_container_listSteps_item_svgBox svg2">
-                            <amp-img width="66" height="66" layout="responsive"
-                                src="./assets/icons/oferta-de-emprestimo-em-5-minutos.svg"></amp-img>
-                        </div>
-                        But also the leap into electronic typesetting.
-                    </li>
-                    <li class="description--form_container_listSteps_item">
-                        <div class="description--form_container_listSteps_item_svgBox svg3">
-                            <amp-img width="66" height="66" layout="responsive"
-                                src="./assets/icons/emprestimo-na-conta-em-48-horas.svg"></amp-img>
-                        </div>
-                        But also the leap into electronic typesetting.
-                    </li>
-                </ul>
-                <h3 class="description--form_container_supportText featured-color">Contrary to popular electronic
-                    typesetting</br>
-                    <span class="featured">It has roots in a piece of classical Latin literature from 45 BC.</span></h3>
+    <div class="main-content">
+        <section class="main-content_banner">
+            <amp-img class="main-content_banner_image" src="./assets/images/background-home.jpg" alt="banner"
+                height="763" width="1357" layout="responsive"></amp-img>
+        </section>
+        <section class="container main-content_container">
+            <div class="main-content_container_left">
+                <section class="main-content_container_featured-text">
+                    <h1 class="main-content_container_featured-text_title">
+                        Empréstimo para o seu negócio? A gente te ajuda.
+                    </h1>
+                    <h2 class="main-content_container_featured-text_subtitle">Pensando em você, a Rede fez parceria com
+                        o Bom Pra
+                        Crédito. Aqui
+                        você encontra diversas opções de crédito de acordo o com seu perfil em um único lugar.</h2>
+                    <a class="main-content_container_featured-text_calltoaction" href="#">Conheça o Bom Pra Crédito</a>
+                </section>
+                <section class="main-content_container_benefits">
+                    <div class="title-component">
+                        <h2 class="title-component_text">Benefícios do Bom Pra Crédito</h2>
+                    </div>
+                </section>
             </div>
-            <div class="description--form_container_boxForm">
+            <div class="main-content_container_right">
                 <form id="ampForm" name="ampForm" class="loan-form" method="post"
                     action-xhr="https://engine.bompracredito.com.br/api/AmpApi/GeneratePreProposal"
                     on="submit:ampForm.clear,AMP.setState({btnContinue:true})" target="_top">
@@ -980,268 +543,11 @@
                     </div>
                 </form>
             </div>
-        </div>
-    </section>
-    <section class="job-description">
-        <div class="job-description_image">
-            <amp-img src="./assets/images/bpc-people-2.png" alt="Welcome" height="436" width="820" layout="responsive">
-            </amp-img>
-            <div class="poupover-descritopn">
-                Is a long established fact that a reader will be distracted by the readable
-                content of a page when looking at its layout.
-            </div>
-        </div>
-        <div class="job-description_text">
-            <h2 class="job-description_text_title">Is a long established fact that a reader will be distracted by the
-                readable
-                content!</h2>
-            <div class="job-description_box left">
-                <p>O <strong>is a long established fact that</strong> a reader will as a more-or-less normal
-                    distribution of letters, as opposed to using.</p>
-                <p>distribution of letters<strong>Ipsum is that it has a more-or-less normal</strong>. Ipsum is that it
-                    has a more-or-less normal.</p>
-            </div>
-            <div class="job-description_box right">
-                <p>O <strong>is a long established fact that</strong> a reader will as a more-or-less normal
-                    distribution of letters, as opposed to using.</p>
-                <p>distribution of letters<strong>Ipsum is that it has a more-or-less normal</strong>. Ipsum is that it
-                    has a more-or-less normal.</p>
+        </section>
 
-            </div>
-        </div>
-    </section>
-    <section class="user-experience">
-        <div class="container">
-            <h2 class="user-experience_title">Is a long established fact that a reader will be distracted by the
-                readable
-                content of a page when looking at its layout.</h2>
-            <div class="user-experience_carrousel">
-                <amp-carousel id="carouselWithPreview" width="1170" height="300" layout="responsive" type="slides"
-                    autoplay delay="4000"
-                    on="slideChange:carouselWithPreviewSelector.toggle(index=event.index, value=true)">
-                    <div class="user-experience_carroucel_item">
-                        <div class="user-experience_carroucel_item_testimony">
-                            <p class="user-experience_carroucel_item_testimony-title">
-                                <b>
-                                    A Kátia pagou suas dívidas e hoje consegue dormir tranquila, sem nenhuma
-                                    preocupação. 1
-                                </b>
-                            </p>
-                            <div class="user-experience_carroucel_item_testimony_icon">
-                                <amp-img src="./assets/icons/arrow-down-yellow.svg" alt="Welcome" height="68"
-                                    width="30px">
-                                </amp-img>
-                            </div>
-                            <div class="user-experience_carroucel_item_testimony-text">
-                                <p>
-                                    “Is a long established fact that a reader will be distracted by the readable
-                                    content of a page when looking at its layout.”
-                                </p>
-                            </div>
-                            <div class="user-experience_carroucel_item_testimony-person">
-                                <p class="name"><b>Kátia M.</b></p>
-                                <p>Engenheira</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="user-experience_carroucel_item">
-                        <div class="user-experience_carroucel_item_testimony">
-                            <p class="user-experience_carroucel_item_testimony-title">
-                                <b>
-                                    A Kátia pagou suas dívidas e hoje consegue dormir tranquila, sem nenhuma
-                                    preocupação. 2
-                                </b>
-                            </p>
-                            <div class="user-experience_carroucel_item_testimony_icon">
-                                <amp-img src="./assets/icons/arrow-down-yellow.svg" alt="Welcome" height="68"
-                                    width="30px">
-                                </amp-img>
-                            </div>
-                            <div class="user-experience_carroucel_item_testimony-text">
-                                <p>
-                                    “Eu gostei da praticidade e facilidade em fazer todo o processo de
-                                    empréstimo online. A aprovação do empréstimo foi super rápida e recebi a
-                                    oferta de empréstimo que eu precisava para pagar algumas dívidas.”
-                                </p>
-                            </div>
-                            <div class="user-experience_carroucel_item_testimony-person">
-                                <p class="name"><b>Kátia M.</b></p>
-                                <p>Engenheira</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="user-experience_carroucel_item">
-                        <div class="user-experience_carroucel_item_testimony">
-                            <p class="user-experience_carroucel_item_testimony-title">
-                                <b>
-                                    A Kátia pagou suas dívidas e hoje consegue dormir tranquila, sem nenhuma
-                                    preocupação. 3
-                                </b>
-                            </p>
-                            <div class="user-experience_carroucel_item_testimony_icon">
-                                <amp-img src="./assets/icons/arrow-down-yellow.svg" alt="Welcome" height="68"
-                                    width="30px">
-                                </amp-img>
-                            </div>
-                            <div class="user-experience_carroucel_item_testimony-text">
-                                <p>
-                                    “Eu gostei da praticidade e facilidade em fazer todo o processo de
-                                    empréstimo online. A aprovação do empréstimo foi super rápida e recebi a
-                                    oferta de empréstimo que eu precisava para pagar algumas dívidas.”
-                                </p>
-                            </div>
-                            <div class="user-experience_carroucel_item_testimony-person">
-                                <p class="name"><b>Kátia M.</b></p>
-                                <p>Engenheira</p>
-                            </div>
-                        </div>
-                    </div>
-                </amp-carousel>
-                <amp-selector id="carouselWithPreviewSelector" class="user-experience_carousel-preview"
-                    on="select:carouselWithPreview.goToSlide(index=event.targetOption)" layout="container">
-                    <button option="0" selected></button>
-                    <button option="1" selected></button>
-                    <button option="2" selected></button>
-                </amp-selector>
-            </div>
-        </div>
-    </section>
-    <section class="communication">
-        <div class="container">
-            <h2 class="communication_title">Is reader will be distracted by the readable
-                content of a page when looking at its layout:</h2>
-            <amp-carousel height="80" layout="fixed-height" type="carousel" class="communication_carrousel" autoplay
-                delay="2000">
-                <amp-img class="communication_carrousel_item" src="./assets/images/logo-isto-e.png" width="98"
-                    height="32" alt="and another sample image">
-                </amp-img>
-                <amp-img class="communication_carrousel_item" src="./assets/images/logo-brasil-economico.png"
-                    width="150" height="56" alt="a sample image">
-                </amp-img>
-                <amp-img class="communication_carrousel_item" src="./assets/images/logo-estado-sp.png" width="172"
-                    height="20" alt="and another sample image">
-                </amp-img>
-                <amp-img class="communication_carrousel_item" src="./assets/images/logo-globo-news.png" width="127"
-                    height="28" alt="and another sample image">
-                </amp-img>
-                <amp-img class="communication_carrousel_item" src="./assets/images/logo-folha-sp.png" width="186"
-                    height="23" alt="and another sample image">
-                </amp-img>
-                <amp-img class="communication_carrousel_item" src="./assets/images/logo-dci.png" width="109" height="33"
-                    alt="another sample image">
-                </amp-img>
-                <amp-img class="communication_carrousel_item" src="./assets/images/logo-o-dia2.png" width="136"
-                    height="36" alt="and another sample image">
-                </amp-img>
-            </amp-carousel>
-        </div>
-
-    </section>
-    <section class="services">
-        <div class="services_image">
-            <amp-img class="communication_carrousel_item" src="./assets/images/bpc-duvida-emprestimo-pessoal.png"
-                width="591" height="600" layout="responsive" alt="and another sample image">
-            </amp-img>
-        </div>
-        <div class="services_description">
-
-            <h2 style="color: #009180;"><strong>Is reader will be distracted?</strong><br></h2>
-            <p>It is a long established fact that a reader will be distracted by the readable content of a page when
-                looking at its layout.
-                The point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>
-            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical
-                Latin literature from 45 BC, making it over 2000 years old</p>
-            <p>It is a long established fact that a reader will be distracted by the readable content of a page when
-                looking at its layout.
-                The point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>
+    </div>
 
 
-
-            <h2 style="color: #009180;"><strong>Using Lorem Ipsum is that it has?</strong><br></h2>
-            <p>It is a long established fact that a reader will be distracted by the readable content of a page when
-                looking at its layout.
-                The point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>
-            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical
-                Latin literature from 45 BC, making it over 2000 years old</p>
-            <p>It is a long established fact that a reader will be distracted by the readable content of a page when
-                looking at its layout.
-                The point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>
-
-            <h2 style="color: #009180;"><strong>Is reader will be distracted?</strong><br></h2>
-            <p>It is a long established fact that a reader will be distracted by the readable content of a page when
-                looking at its layout.
-                The point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>
-            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical
-                Latin literature from 45 BC, making it over 2000 years old</p>
-            <p>It is a long established fact that a reader will be distracted by the readable content of a page when
-                looking at its layout.
-                The point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>
-
-            <h2 style="color: #009180;"><strong>Lorem Ipsum is that it has a more-or-less?</strong><br></h2>
-            <p>It is a long established fact that a reader will be distracted by the readable content of a page when
-                looking at its layout.
-                The point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>
-            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical
-                Latin literature from 45 BC, making it over 2000 years old</p>
-
-            <amp-accordion animate disable-session-states>
-                <section class="services_descriptions_accordion-wrapper">
-                    <h2>It has roots is that it has a more-or-less?</h2>
-                    <div>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a
-                            page when
-                            looking at its layout.
-                            The point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>
-                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
-                            classical
-                            Latin literature from 45 BC, making it over 2000 years old</p>
-                    </div>
-                </section>
-                <section class="services_descriptions_accordion-wrapper">
-                    <h2>It has roots is that it has a more-or-less?</h2>
-                    <div>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a
-                            page when
-                            looking at its layout.
-                            The point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>
-                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
-                            classical
-                            Latin literature from 45 BC, making it over 2000 years old</p>
-                    </div>
-                </section>
-                <section class="services_descriptions_accordion-wrapper">
-                    <h2>It has roots is that it has a more-or-less?</h2>
-                    <div>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a
-                            page when
-                            looking at its layout.
-                            The point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>
-                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
-                            classical
-                            Latin literature from 45 BC, making it over 2000 years old</p>
-                    </div>
-                </section>
-                <section class="services_descriptions_accordion-wrapper">
-                    <h2>It has roots is that it has a more-or-less?</h2>
-                    <div>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a
-                            page when
-                            looking at its layout.
-                            The point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>
-                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
-                            classical
-                            Latin literature from 45 BC, making it over 2000 years old</p>
-                    </div>
-                </section>
-            </amp-accordion>
-            <div class="services_description_doubts">
-                <h2 class="services_description_doubts_title"> Lorem Ipsum is that it has a more that?</h2>
-                <p class="services_description_doubts_text">Acesse nossa Central de Ajuda e, se preferir, envie-nos uma
-                    mensagem.</p><a class="services_description_doubts_target" role="button"
-                    href="https://teste.zendesk.com" target="_blank">Central de Ajuda</a>
-            </div>
-        </div>
-    </section>
 </body>
 
 </html>
