@@ -11,7 +11,15 @@
         "src": "assets/images/whatsapp-icon.png",
         "type": "image/png",
         "sizes": "96x96"
+      },
+      {
+        "src":"assets/images/512-faviconicon.png",
+        "type": "image/png",
+        "sizes":"512x512"
       }
     ],
-    "start_url": "index.html"
+    "start_url": "index.html",
+    "background_color" : "#fff",
+    "display": "standalone",
+    "theme_color": "#fff"
   } 

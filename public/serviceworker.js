@@ -1,16 +1,5 @@
-self.addEventListener('install', function (event) {
-  event.waitUntil(
-    caches.open('bpcCache').then(function (cache) {
-      return cache.addAll([
-        '/assets/images/background-home.jpg',
-        '/assets/images/Logo_horizontal.png'
-      ]);
-    })
-  );
-});
-
 self.addEventListener('fetch', function (event) {
-  console.log('event');
+  console.log(event);
   event.respondWith(
     caches.open('bpcCache').then(function (cache) {
       console.log(cache);
